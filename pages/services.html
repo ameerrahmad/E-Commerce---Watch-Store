@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services — ChronoLux</title>
+  <meta name="description" content="ChronoLux services — watch servicing, warranty, engraving, and authentication." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../cssFile/globalStyles.css" />
+</head>
+<body>
+
+  <nav>
+    <a href="../index.html">ChronoLux</a>
+    <button class="menu-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+    <ul id="nav-menu">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="products.html">Collection</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><button id="dark-mode-btn" class="tiny-button border-button">🌙</button></li>
+      <li><a href="login.html"><button class="sm-button">Sign In</button></a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Strip -->
+  <div style="background:var(--brand-primary-color);padding:70px 48px;text-align:center;border-bottom:1px solid var(--border-muted-color);">
+    <h4>What We Offer</h4>
+    <h1>Beyond the <span style="color:var(--brand-third-color);">Timepiece</span></h1>
+    <p style="max-width:520px;margin:0 auto;">From expert servicing to personal engraving — we care for your watch throughout its lifetime.</p>
+  </div>
+
+  <!-- Core Services -->
+  <section class="section">
+    <h4 class="section-title">Our Services</h4>
+    <h2 class="section-title">Craftsmanship at Every Stage</h2>
+    <div class="section-line"></div>
+
+    <div class="card-container">
+      <div class="card" style="padding:32px 24px;align-items:center;text-align:center;gap:12px;max-width:300px;">
+        <div style="font-size:3rem;">🔧</div>
+        <h3>Watch Servicing</h3>
+        <p>Full movement overhaul, cleaning, lubrication and regulation by our certified Swiss watchmakers. Recommended every 3–5 years.</p>
+        <button class="border-button sm-button" onclick="showToast('Book a service appointment')">Book Service</button>
+      </div>
+      <div class="card" style="padding:32px 24px;align-items:center;text-align:center;gap:12px;max-width:300px;">
+        <div style="font-size:3rem;">🛡️</div>
+        <h3>Warranty &amp; Repair</h3>
+        <p>All ChronoLux watches carry a 5-year international warranty covering manufacturing defects and movement performance.</p>
+        <button class="border-button sm-button" onclick="showToast('Register your warranty')">Register Watch</button>
+      </div>
+      <div class="card" style="padding:32px 24px;align-items:center;text-align:center;gap:12px;max-width:300px;">
+        <div style="font-size:3rem;">✍️</div>
+        <h3>Personal Engraving</h3>
+        <p>Add a personal message or monogram to the caseback of any ChronoLux watch. A truly timeless gift.</p>
+        <button class="border-button sm-button" onclick="showToast('Engraving request sent')">Request Engraving</button>
+      </div>
+      <div class="card" style="padding:32px 24px;align-items:center;text-align:center;gap:12px;max-width:300px;">
+        <div style="font-size:3rem;">🔍</div>
+        <h3>Authentication</h3>
+        <p>Verify the authenticity of any ChronoLux timepiece through our official authentication programme with certified paperwork.</p>
+        <button class="border-button sm-button" onclick="showToast('Authentication enquiry sent')">Authenticate</button>
+      </div>
+      <div class="card" style="padding:32px 24px;align-items:center;text-align:center;gap:12px;max-width:300px;">
+        <div style="font-size:3rem;">📦</div>
+        <h3>Gift Packaging</h3>
+        <p>Every order ships in our signature dark navy gift box with gold ribbon, certificate and polishing cloth.</p>
+        <button class="border-button sm-button" onclick="showToast('Gift wrap included automatically')">Learn More</button>
+      </div>
+      <div class="card" style="padding:32px 24px;align-items:center;text-align:center;gap:12px;max-width:300px;">
+        <div style="font-size:3rem;">💎</div>
+        <h3>Bespoke Commission</h3>
+        <p>Design a one-of-a-kind watch with our ateliers. From dial colour to strap material — fully personalised.</p>
+        <button class="border-button sm-button" onclick="showToast('Bespoke enquiry sent')">Enquire Now</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Process -->
+  <section style="background:var(--brand-primary-color);padding:80px 10%;border-top:1px solid var(--border-muted-color);">
+    <h4 style="text-align:center;">How It Works</h4>
+    <h2 style="text-align:center;">The Service Journey</h2>
+    <div class="section-line"></div>
+    <div style="display:flex;gap:24px;flex-wrap:wrap;justify-content:center;margin-top:16px;">
+      <div style="flex:1;min-width:200px;max-width:260px;text-align:center;padding:24px;">
+        <div style="width:52px;height:52px;border-radius:50%;border:2px solid var(--brand-third-color);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:1.2rem;color:var(--brand-third-color);font-weight:700;">1</div>
+        <h3>Request</h3>
+        <p style="font-size:0.88rem;">Submit a service request online or visit one of our boutiques.</p>
+      </div>
+      <div style="flex:1;min-width:200px;max-width:260px;text-align:center;padding:24px;">
+        <div style="width:52px;height:52px;border-radius:50%;border:2px solid var(--brand-third-color);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:1.2rem;color:var(--brand-third-color);font-weight:700;">2</div>
+        <h3>Ship</h3>
+        <p style="font-size:0.88rem;">Send your watch using our free insured pre-paid shipping label.</p>
+      </div>
+      <div style="flex:1;min-width:200px;max-width:260px;text-align:center;padding:24px;">
+        <div style="width:52px;height:52px;border-radius:50%;border:2px solid var(--brand-third-color);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:1.2rem;color:var(--brand-third-color);font-weight:700;">3</div>
+        <h3>Service</h3>
+        <p style="font-size:0.88rem;">Our master watchmakers perform the service and quality checks.</p>
+      </div>
+      <div style="flex:1;min-width:200px;max-width:260px;text-align:center;padding:24px;">
+        <div style="width:52px;height:52px;border-radius:50%;border:2px solid var(--brand-third-color);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:1.2rem;color:var(--brand-third-color);font-weight:700;">4</div>
+        <h3>Return</h3>
+        <p style="font-size:0.88rem;">Receive your serviced watch, renewed and certified.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Pricing Table -->
+  <section class="section">
+    <h2 class="section-title">Service Pricing</h2>
+    <div class="section-line"></div>
+    <div class="table-container">
+      <table class="table-bordered" style="min-width:400px;max-width:800px;">
+        <thead>
+          <tr><th>Service Type</th><th>Includes</th><th>Duration</th><th>Price</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Basic Service</td><td>Clean, oil, regulate</td><td>2–3 weeks</td><td style="color:var(--brand-third-color);">From $280</td></tr>
+          <tr><td>Full Overhaul</td><td>Complete movement strip &amp; rebuild</td><td>4–6 weeks</td><td style="color:var(--brand-third-color);">From $580</td></tr>
+          <tr><td>Crystal Replacement</td><td>Sapphire crystal swap</td><td>1 week</td><td style="color:var(--brand-third-color);">From $120</td></tr>
+          <tr><td>Strap Replacement</td><td>OEM strap fitting</td><td>Same day</td><td style="color:var(--brand-third-color);">From $60</td></tr>
+          <tr><td>Engraving</td><td>Caseback laser engraving</td><td>1 week</td><td style="color:var(--brand-third-color);">From $80</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <a href="contact.html" style="margin-top:32px;"><button class="border-button">Contact Us for a Quote</button></a>
+  </section>
+
+  <footer>
+    <div class="footer-container">
+      <div><h1>ChronoLux</h1><p>Swiss luxury watches since 1889.</p></div>
+      <div><h2>Services</h2><a href="services.html">Servicing</a><a href="services.html">Warranty</a><a href="services.html">Engraving</a></div>
+      <div><h2>Company</h2><a href="about.html">Our Story</a><a href="contact.html">Contact</a></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 ChronoLux. All rights reserved.</p></div>
+  </footer>
+
+  <script src="../jsFile/jsFunctions.js"></script>
+</body>
+</html>

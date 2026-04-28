@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shopping Cart — ChronoLux</title>
+  <meta name="description" content="Review your ChronoLux cart and proceed to secure checkout." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../cssFile/globalStyles.css" />
+</head>
+<body>
+
+  <nav>
+    <a href="../index.html">ChronoLux</a>
+    <button class="menu-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+    <ul id="nav-menu">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="products.html">Collection</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li>
+        <a href="cart.html" style="position:relative;">
+          🛒 <span id="cart-badge" style="display:none;position:absolute;top:-8px;right:-12px;background:var(--brand-third-color);color:var(--brand-primary-color);border-radius:50%;width:18px;height:18px;font-size:0.65rem;font-weight:700;align-items:center;justify-content:center;">0</span>
+        </a>
+      </li>
+      <li><button id="dark-mode-btn" class="tiny-button border-button">🌙</button></li>
+      <li><a href="login.html"><button class="sm-button">Sign In</button></a></li>
+    </ul>
+  </nav>
+
+  <div class="page">
+    <h1>Your <span style="color:var(--brand-third-color);">Cart</span></h1>
+    <div class="section-line" style="margin:0 0 32px;"></div>
+
+    <div style="display:flex;gap:32px;flex-wrap:wrap;align-items:flex-start;">
+
+      <!-- Cart Items -->
+      <div style="flex:2;min-width:280px;">
+        <div class="table-container">
+          <table id="cart-table" style="min-width:480px;max-width:900px;">
+            <thead>
+              <tr>
+                <th>Item</th>
+                <th>Price</th>
+                <th>Qty</th>
+                <th>Subtotal</th>
+                <th>Remove</th>
+              </tr>
+            </thead>
+            <tbody id="cart-body">
+              <!-- Rendered by JS -->
+            </tbody>
+          </table>
+        </div>
+
+        <div style="display:flex;justify-content:space-between;margin-top:20px;flex-wrap:wrap;gap:12px;">
+          <a href="products.html"><button class="border-button">← Continue Shopping</button></a>
+          <button class="border-button" onclick="clearCart();renderCart();showToast('Cart cleared')">Clear Cart</button>
+        </div>
+      </div>
+
+      <!-- Order Summary -->
+      <div class="card" style="flex:1;min-width:260px;padding:28px;gap:16px;">
+        <h2 style="margin:0 0 8px;">Order Summary</h2>
+        <div style="display:flex;flex-direction:column;gap:12px;border-bottom:1px solid var(--border-muted-color);padding-bottom:16px;">
+          <div style="display:flex;justify-content:space-between;"><span style="color:var(--text-muted-color);">Subtotal</span><span id="summary-subtotal">$0</span></div>
+          <div style="display:flex;justify-content:space-between;"><span style="color:var(--text-muted-color);">Shipping</span><span style="color:var(--brand-third-color);">Free</span></div>
+          <div style="display:flex;justify-content:space-between;"><span style="color:var(--text-muted-color);">Tax (8%)</span><span id="summary-tax">$0</span></div>
+        </div>
+        <div style="display:flex;justify-content:space-between;font-size:1.1rem;font-weight:700;">
+          <span>Total</span><span id="summary-total" style="color:var(--brand-third-color);">$0</span>
+        </div>
+
+        <!-- Promo Code -->
+        <div>
+          <label for="promo-code">Promo Code</label>
+          <div style="display:flex;gap:8px;margin-top:6px;">
+            <input type="text" id="promo-code" placeholder="CHRONO10" style="flex:1;" />
+            <button class="sm-button border-button" onclick="showToast('Promo code applied!')">Apply</button>
+          </div>
+        </div>
+
+        <button style="width:100%;margin-top:8px;" onclick="showToast('Redirecting to secure checkout…')">Proceed to Checkout →</button>
+        <p style="font-size:0.78rem;text-align:center;color:var(--text-muted-color);margin:0;">🔒 Secure SSL checkout. Free insured shipping.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-container">
+      <div><h1>ChronoLux</h1><p>Swiss luxury watches since 1889.</p></div>
+      <div><h2>Shop</h2><a href="products.html">Collection</a><a href="product-detail.html">Product Detail</a></div>
+      <div><h2>Help</h2><a href="contact.html">Contact</a><a href="#">Returns</a></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 ChronoLux. All rights reserved.</p></div>
+  </footer>
+
+  <script src="../jsFile/jsFunctions.js"></script>
+  <script>
+    function renderCart() {
+      const cart = getCart();
+      const tbody = document.getElementById('cart-body');
+      if (!tbody) return;
+
+      if (cart.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="5" class="table-empty">Your cart is empty. <a href="products.html">Shop now →</a></td></tr>';
+        document.getElementById('summary-subtotal').textContent = '$0';
+        document.getElementById('summary-tax').textContent = '$0';
+        document.getElementById('summary-total').textContent = '$0';
+        return;
+      }
+
+      let subtotal = 0;
+      tbody.innerHTML = cart.map(item => {
+        const line = item.price * (item.qty || 1);
+        subtotal += line;
+        return `<tr>
+          <td style="display:flex;align-items:center;gap:12px;">
+            <img src="${item.image}" alt="${item.name}" style="width:54px;height:54px;object-fit:cover;border-radius:var(--radius-sm);border:1px solid var(--border-primary-color);" />
+            <span>${item.name}</span>
+          </td>
+          <td>$${item.price.toLocaleString()}</td>
+          <td>
+            <div style="display:flex;align-items:center;gap:4px;">
+              <button class="tiny-button border-button" onclick="changeQty('${item.id}',-1);renderCart()">−</button>
+              <span style="min-width:24px;text-align:center;">${item.qty || 1}</span>
+              <button class="tiny-button border-button" onclick="changeQty('${item.id}',1);renderCart()">+</button>
+            </div>
+          </td>
+          <td style="color:var(--brand-third-color);font-weight:600;">$${line.toLocaleString()}</td>
+          <td><button class="tiny-button border-button" onclick="removeFromCart('${item.id}');renderCart();showToast('Item removed')">✕</button></td>
+        </tr>`;
+      }).join('');
+
+      const tax = subtotal * 0.08;
+      document.getElementById('summary-subtotal').textContent = '$' + subtotal.toLocaleString();
+      document.getElementById('summary-tax').textContent = '$' + tax.toFixed(0);
+      document.getElementById('summary-total').textContent = '$' + (subtotal + tax).toFixed(0);
+    }
+
+    document.addEventListener('DOMContentLoaded', renderCart);
+  </script>
+</body>
+</html>

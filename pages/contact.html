@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us — ChronoLux</title>
+  <meta name="description" content="Get in touch with ChronoLux — our team is ready to assist with enquiries, orders and services." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../cssFile/globalStyles.css" />
+</head>
+<body>
+
+  <nav>
+    <a href="../index.html">ChronoLux</a>
+    <button class="menu-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+    <ul id="nav-menu">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="products.html">Collection</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><button id="dark-mode-btn" class="tiny-button border-button">🌙</button></li>
+      <li><a href="login.html"><button class="sm-button">Sign In</button></a></li>
+    </ul>
+  </nav>
+
+  <!-- Header -->
+  <div style="background:var(--brand-primary-color);padding:70px 48px;text-align:center;border-bottom:1px solid var(--border-muted-color);">
+    <h4>Get In Touch</h4>
+    <h1>We're Here to <span style="color:var(--brand-third-color);">Help</span></h1>
+    <p style="max-width:480px;margin:0 auto;">Our team of experts is available Monday to Friday, 9am – 6pm CET.</p>
+  </div>
+
+  <div class="page">
+    <div style="display:flex;gap:48px;flex-wrap:wrap;align-items:flex-start;">
+
+      <!-- Contact Form -->
+      <div style="flex:2;min-width:280px;">
+        <h2>Send a Message</h2>
+        <div class="section-line" style="margin:0 0 24px;"></div>
+        <form id="contact-form" onsubmit="event.preventDefault();if(validateForm('contact-form'))showToast('Message sent! We\'ll reply within 24 hours.');" style="background:var(--bg-card);border:1px solid var(--border-primary-color);border-radius:var(--radius-md);padding:36px;max-width:100%;">
+          <div style="display:flex;gap:16px;flex-wrap:wrap;">
+            <div style="flex:1;min-width:140px;">
+              <label for="contact-fname">First Name</label>
+              <input type="text" id="contact-fname" name="fname" placeholder="Jean" required />
+              <span class="field-error" style="display:none;color:#E05555;font-size:0.78rem;">Required.</span>
+            </div>
+            <div style="flex:1;min-width:140px;">
+              <label for="contact-lname">Last Name</label>
+              <input type="text" id="contact-lname" name="lname" placeholder="Dupont" required />
+              <span class="field-error" style="display:none;color:#E05555;font-size:0.78rem;">Required.</span>
+            </div>
+          </div>
+          <div>
+            <label for="contact-email">Email Address</label>
+            <input type="email" id="contact-email" name="email" placeholder="you@example.com" required />
+            <span class="field-error" style="display:none;color:#E05555;font-size:0.78rem;">Valid email required.</span>
+          </div>
+          <div>
+            <label for="contact-subject">Subject</label>
+            <div class="select-container">
+              <select id="contact-subject" name="subject">
+                <option>General Enquiry</option>
+                <option>Order &amp; Shipping</option>
+                <option>Watch Service</option>
+                <option>Warranty Claim</option>
+                <option>Press &amp; Partnership</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <label for="contact-message">Message</label>
+            <textarea id="contact-message" name="message" placeholder="Tell us how we can help…" required></textarea>
+            <span class="field-error" style="display:none;color:#E05555;font-size:0.78rem;">Message is required.</span>
+          </div>
+          <button type="submit" style="width:100%;margin-top:8px;">Send Message</button>
+        </form>
+      </div>
+
+      <!-- Contact Info -->
+      <div style="flex:1;min-width:260px;display:flex;flex-direction:column;gap:20px;">
+        <h2>Contact Details</h2>
+        <div class="section-line" style="margin:0 0 8px;"></div>
+
+        <div class="card" style="padding:24px;gap:10px;">
+          <div style="font-size:1.6rem;">📍</div>
+          <h3 style="margin:0;">Head Office</h3>
+          <p style="margin:0;">14 Rue de la Paix<br />Geneva 1201, Switzerland</p>
+        </div>
+        <div class="card" style="padding:24px;gap:10px;">
+          <div style="font-size:1.6rem;">📞</div>
+          <h3 style="margin:0;">Phone</h3>
+          <p style="margin:0;"><a href="tel:+41221234567">+41 22 123 4567</a></p>
+          <p style="margin:0;font-size:0.82rem;color:var(--text-muted-color);">Mon–Fri, 9am – 6pm CET</p>
+        </div>
+        <div class="card" style="padding:24px;gap:10px;">
+          <div style="font-size:1.6rem;">✉️</div>
+          <h3 style="margin:0;">Email</h3>
+          <p style="margin:0;"><a href="mailto:hello@chronolux.com">hello@chronolux.com</a></p>
+          <p style="margin:0;font-size:0.82rem;color:var(--text-muted-color);">Reply within 24 hours</p>
+        </div>
+        <div class="card" style="padding:24px;gap:10px;">
+          <div style="font-size:1.6rem;">🏬</div>
+          <h3 style="margin:0;">Boutiques</h3>
+          <p style="margin:0;">Geneva · Paris · Dubai · Tokyo · New York</p>
+          <a href="#" style="font-size:0.85rem;">Find nearest boutique →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Map Placeholder -->
+    <div style="margin-top:60px;">
+      <h2>Find Us</h2>
+      <div class="section-line" style="margin:0 0 24px;"></div>
+      <div style="width:100%;height:320px;background:var(--brand-secondary-color);border:1px solid var(--border-primary-color);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;">
+        <div style="font-size:3rem;">🗺️</div>
+        <p style="color:var(--text-muted-color);margin:0;">Interactive map — 14 Rue de la Paix, Geneva, Switzerland</p>
+        <a href="https://maps.google.com" target="_blank"><button class="border-button sm-button">Open in Google Maps</button></a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-container">
+      <div><h1>ChronoLux</h1><p>Swiss luxury watches since 1889.</p></div>
+      <div><h2>Company</h2><a href="about.html">About Us</a><a href="services.html">Services</a><a href="contact.html">Contact</a></div>
+      <div><h2>Account</h2><a href="login.html">Sign In</a><a href="signup.html">Register</a><a href="dashboard.html">Dashboard</a></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 ChronoLux. All rights reserved.</p></div>
+  </footer>
+
+  <script src="../jsFile/jsFunctions.js"></script>
+</body>
+</html>

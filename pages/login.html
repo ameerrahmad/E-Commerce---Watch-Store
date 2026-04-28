@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign In — ChronoLux</title>
+  <meta name="description" content="Sign in to your ChronoLux account to manage orders and your watch collection." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../cssFile/globalStyles.css" />
+</head>
+<body>
+
+  <nav>
+    <a href="../index.html">ChronoLux</a>
+    <button class="menu-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+    <ul id="nav-menu">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="products.html">Collection</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><button id="dark-mode-btn" class="tiny-button border-button">🌙</button></li>
+    </ul>
+  </nav>
+
+  <div class="form-container">
+    <div style="text-align:center;margin-bottom:32px;">
+      <a href="../index.html" style="font-size:1.8rem;font-weight:700;letter-spacing:0.12em;color:var(--brand-third-color);text-transform:uppercase;">ChronoLux</a>
+      <p style="margin-top:8px;color:var(--text-muted-color);font-size:0.9rem;">Welcome back. Please sign in.</p>
+    </div>
+
+    <form id="login-form" onsubmit="event.preventDefault(); if(validateForm('login-form')) showToast('Signed in successfully!');">
+      <div>
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required />
+        <span class="field-error" style="display:none;color:#E05555;font-size:0.78rem;">Email is required.</span>
+      </div>
+      <div>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="••••••••" required />
+        <span class="field-error" style="display:none;color:#E05555;font-size:0.78rem;">Password is required.</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;">
+        <label style="display:flex;align-items:center;gap:8px;text-transform:none;font-size:0.85rem;letter-spacing:0;cursor:pointer;">
+          <input type="checkbox" id="remember-me" style="width:auto;" /> Remember me
+        </label>
+        <a href="#" style="font-size:0.82rem;">Forgot password?</a>
+      </div>
+      <button type="submit" style="width:100%;">Sign In</button>
+      <p style="text-align:center;margin-top:20px;font-size:0.88rem;">
+        Don't have an account? <a href="signup.html">Create one →</a>
+      </p>
+    </form>
+  </div>
+
+  <script src="../jsFile/jsFunctions.js"></script>
+</body>
+</html>

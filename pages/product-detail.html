@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chronograph Pro — ChronoLux</title>
+  <meta name="description" content="Chronograph Pro — Triple sub-dial Swiss precision watch. Explore full specs and purchase." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../cssFile/globalStyles.css" />
+</head>
+<body>
+
+  <nav>
+    <a href="../index.html">ChronoLux</a>
+    <button class="menu-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+    <ul id="nav-menu">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="products.html">Collection</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li>
+        <a href="cart.html" style="position:relative;">
+          🛒 <span id="cart-badge" style="display:none;position:absolute;top:-8px;right:-12px;background:var(--brand-third-color);color:var(--brand-primary-color);border-radius:50%;width:18px;height:18px;font-size:0.65rem;font-weight:700;align-items:center;justify-content:center;">0</span>
+        </a>
+      </li>
+      <li><button id="dark-mode-btn" class="tiny-button border-button">🌙</button></li>
+      <li><a href="login.html"><button class="sm-button">Sign In</button></a></li>
+    </ul>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div style="padding:16px 48px;background:var(--bg-card);border-bottom:1px solid var(--border-muted-color);font-size:0.82rem;color:var(--text-muted-color);">
+    <a href="../index.html">Home</a> &nbsp;/&nbsp;
+    <a href="products.html">Collection</a> &nbsp;/&nbsp;
+    <span style="color:var(--brand-third-color);">Chronograph Pro</span>
+  </div>
+
+  <!-- Product Detail -->
+  <div class="page">
+    <div style="display:flex;gap:60px;flex-wrap:wrap;align-items:flex-start;">
+
+      <!-- Image -->
+      <div style="flex:1;min-width:280px;max-width:520px;">
+        <img src="../sources/image3.png" alt="Chronograph Pro" style="width:100%;border-radius:var(--radius-md);border:1px solid var(--border-primary-color);" />
+        <div style="display:flex;gap:12px;margin-top:12px;">
+          <img src="../sources/image3.png" alt="View 1" style="width:80px;height:80px;object-fit:cover;border-radius:var(--radius-sm);border:1px solid var(--border-secondary-color);cursor:pointer;" />
+          <img src="../sources/image5.png" alt="View 2" style="width:80px;height:80px;object-fit:cover;border-radius:var(--radius-sm);border:1px solid var(--border-primary-color);cursor:pointer;opacity:0.6;" />
+          <img src="../sources/image6.png" alt="View 3" style="width:80px;height:80px;object-fit:cover;border-radius:var(--radius-sm);border:1px solid var(--border-primary-color);cursor:pointer;opacity:0.6;" />
+        </div>
+      </div>
+
+      <!-- Info -->
+      <div style="flex:1;min-width:280px;display:flex;flex-direction:column;gap:16px;">
+        <div>
+          <h4>Chronograph Collection</h4>
+          <h1 style="font-size:2rem;">Chronograph Pro</h1>
+          <p>Ref. CL-CH-001 &nbsp;|&nbsp; <span style="color:var(--brand-third-color);">In Stock</span></p>
+        </div>
+        <p style="font-size:1.8rem;font-weight:700;color:var(--brand-third-color);margin:0;">$2,850</p>
+        <p>A masterpiece of precision engineering. The Chronograph Pro features a triple sub-dial layout, Swiss ETA 7750 movement, and a scratch-resistant sapphire crystal. Crafted for those who demand performance without compromise.</p>
+
+        <!-- Options -->
+        <div>
+          <label for="strap-select">Strap Option</label>
+          <div class="select-container" style="margin-top:6px;">
+            <select id="strap-select">
+              <option>Brown Leather</option>
+              <option>Black Leather</option>
+              <option>Steel Bracelet</option>
+              <option>Black Rubber</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Quantity -->
+        <div style="display:flex;align-items:center;gap:16px;">
+          <label>Quantity</label>
+          <div style="display:flex;align-items:center;gap:0;border:1px solid var(--border-primary-color);border-radius:var(--radius-sm);overflow:hidden;">
+            <button class="tiny-button" style="border-radius:0;border:none;padding:8px 14px;" onclick="this.nextElementSibling.value=Math.max(1,parseInt(this.nextElementSibling.value)-1)">−</button>
+            <input type="number" value="1" min="1" id="qty-input" style="width:48px;text-align:center;border:none;background:var(--bg-card);padding:8px 0;" />
+            <button class="tiny-button" style="border-radius:0;border:none;padding:8px 14px;" onclick="this.previousElementSibling.value=parseInt(this.previousElementSibling.value)+1">+</button>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <button class="lg-button" style="flex:1;" onclick="addToCart('prod-1','Chronograph Pro',2850,'../sources/image3.png');showToast('Added to cart!')">Add to Cart</button>
+          <button class="lg-button border-button" onclick="showToast('Saved to wishlist ♡')">♡ Wishlist</button>
+        </div>
+
+        <div style="display:flex;gap:20px;padding:16px 0;border-top:1px solid var(--border-muted-color);border-bottom:1px solid var(--border-muted-color);flex-wrap:wrap;">
+          <span style="font-size:0.82rem;color:var(--text-muted-color);">🚚 Free shipping worldwide</span>
+          <span style="font-size:0.82rem;color:var(--text-muted-color);">🛡️ 5-year warranty</span>
+          <span style="font-size:0.82rem;color:var(--text-muted-color);">↩ 30-day returns</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Specs Table -->
+    <div style="margin-top:60px;">
+      <h2>Technical Specifications</h2>
+      <div class="section-line" style="margin:0 0 24px;"></div>
+      <div class="table-container">
+        <table style="min-width:320px;max-width:720px;" class="table-bordered">
+          <thead>
+            <tr><th>Specification</th><th>Detail</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Movement</td><td>Swiss ETA 7750 Automatic</td></tr>
+            <tr><td>Case Diameter</td><td>42mm</td></tr>
+            <tr><td>Case Material</td><td>316L Stainless Steel</td></tr>
+            <tr><td>Crystal</td><td>Scratch-resistant Sapphire</td></tr>
+            <tr><td>Water Resistance</td><td>100 metres / 10 ATM</td></tr>
+            <tr><td>Power Reserve</td><td>42 hours</td></tr>
+            <tr><td>Dial Colour</td><td>Matte Black</td></tr>
+            <tr><td>Lug Width</td><td>20mm</td></tr>
+            <tr><td>Weight</td><td>145g (with bracelet)</td></tr>
+            <tr><td>Warranty</td><td>5 Years International</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Related Products -->
+    <div style="margin-top:60px;">
+      <h2 style="text-align:center;">You May Also Like</h2>
+      <div class="section-line"></div>
+      <div class="card-container">
+        <div class="card">
+          <img src="../sources/image5.png" alt="Diver X1" />
+          <div style="padding:16px;display:flex;flex-direction:column;gap:6px;">
+            <h4>Diver</h4><h3>Diver X1</h3>
+            <p style="color:var(--brand-third-color);font-weight:700;">$3,400</p>
+            <a href="product-detail.html"><button class="sm-button" style="width:100%;">View Details</button></a>
+          </div>
+        </div>
+        <div class="card">
+          <img src="../sources/image3.png" alt="Aviator GMT" />
+          <div style="padding:16px;display:flex;flex-direction:column;gap:6px;">
+            <h4>Pilot</h4><h3>Aviator GMT</h3>
+            <p style="color:var(--brand-third-color);font-weight:700;">$4,100</p>
+            <a href="product-detail.html"><button class="sm-button" style="width:100%;">View Details</button></a>
+          </div>
+        </div>
+        <div class="card">
+          <img src="../sources/image6.png" alt="Lady Diamond" />
+          <div style="padding:16px;display:flex;flex-direction:column;gap:6px;">
+            <h4>Ladies</h4><h3>Lady Diamond</h3>
+            <p style="color:var(--brand-third-color);font-weight:700;">$5,200</p>
+            <a href="product-detail.html"><button class="sm-button" style="width:100%;">View Details</button></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-container">
+      <div><h1>ChronoLux</h1><p>Swiss luxury watches since 1889.</p></div>
+      <div><h2>Collection</h2><a href="products.html">All Watches</a><a href="products.html">Chronographs</a><a href="products.html">Divers</a></div>
+      <div><h2>Support</h2><a href="contact.html">Contact Us</a><a href="#">Warranty</a><a href="#">Returns</a></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 ChronoLux. All rights reserved.</p></div>
+  </footer>
+
+  <script src="../jsFile/jsFunctions.js"></script>
+</body>
+</html>
