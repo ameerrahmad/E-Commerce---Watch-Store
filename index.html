@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -32,8 +32,8 @@
       </li>
       <li><a href="pages/contact.html">Contact</a></li>
       <li>
-        <a href="pages/cart.html" style="position:relative;">
-          🛒 <span id="cart-badge" style="display:none;position:absolute;top:-8px;right:-12px;background:var(--brand-third-color);color:var(--brand-primary-color);border-radius:50%;width:18px;height:18px;font-size:0.65rem;font-weight:700;align-items:center;justify-content:center;">0</span>
+        <a href="pages/cart.html" class="cart-link">
+          🛒 <span id="cart-badge" class="cart-badge">0</span>
         </a>
       </li>
       <li><button id="dark-mode-btn" class="tiny-button border-button">🌙</button></li>
@@ -46,11 +46,11 @@
     <div class="hero-bg" style="background-image:url('sources/image1.png');"></div>
     <div class="hero-content">
       <h4>Swiss Precision Since 1889</h4>
-      <h1>Time Is Your <span style="color:var(--brand-third-color);">Masterpiece</span></h1>
-      <p style="max-width:540px;margin:0 auto 36px;font-size:1.1rem;">
+      <h1>Time Is Your <span class="accent-text">Masterpiece</span></h1>
+      <p class="hero-subtitle">
         Handcrafted mechanical watches that transcend generations. Where art meets engineering.
       </p>
-      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+      <div class="hero-actions">
         <a href="pages/products.html"><button class="lg-button">Explore Collection</button></a>
         <a href="pages/about.html"><button class="lg-button border-button">Our Story</button></a>
       </div>
@@ -67,13 +67,13 @@
       <!-- Card 1 -->
       <div class="card">
         <img src="sources/image3.png" alt="Chronograph Pro" />
-        <div style="padding:20px;display:flex;flex-direction:column;gap:8px;flex:1;">
+        <div class="card-body">
           <h4>Chronograph Pro</h4>
           <h3>The Racing Edition</h3>
           <p>Triple sub-dial precision chronograph with sapphire crystal.</p>
-          <p style="color:var(--brand-third-color);font-size:1.1rem;font-weight:700;">$2,850</p>
-          <div style="display:flex;gap:10px;margin-top:auto;">
-            <a href="pages/product-detail.html"><button class="sm-button" style="flex:1;">View Details</button></a>
+          <p class="card-price">$2,850</p>
+          <div class="card-actions">
+            <a href="pages/product-detail.html"><button class="sm-button flex-1">View Details</button></a>
             <button class="sm-button border-button" onclick="addToCart('prod-1','Chronograph Pro',2850,'sources/image3.png')">Add to Cart</button>
           </div>
         </div>
@@ -81,13 +81,13 @@
       <!-- Card 2 -->
       <div class="card">
         <img src="sources/image5.png" alt="Diver X1" />
-        <div style="padding:20px;display:flex;flex-direction:column;gap:8px;flex:1;">
+        <div class="card-body">
           <h4>Diver X1</h4>
           <h3>Deep Ocean Edition</h3>
           <p>300m water resistant with uni-directional rotating bezel.</p>
-          <p style="color:var(--brand-third-color);font-size:1.1rem;font-weight:700;">$3,400</p>
-          <div style="display:flex;gap:10px;margin-top:auto;">
-            <a href="pages/product-detail.html"><button class="sm-button" style="flex:1;">View Details</button></a>
+          <p class="card-price">$3,400</p>
+          <div class="card-actions">
+            <a href="pages/product-detail.html"><button class="sm-button flex-1">View Details</button></a>
             <button class="sm-button border-button" onclick="addToCart('prod-2','Diver X1',3400,'sources/image5.png')">Add to Cart</button>
           </div>
         </div>
@@ -95,13 +95,13 @@
       <!-- Card 3 -->
       <div class="card">
         <img src="sources/image6.png" alt="Lady Diamond" />
-        <div style="padding:20px;display:flex;flex-direction:column;gap:8px;flex:1;">
+        <div class="card-body">
           <h4>Lady Diamond</h4>
           <h3>Elegance Series</h3>
           <p>Diamond-set bezel with mother-of-pearl dial.</p>
-          <p style="color:var(--brand-third-color);font-size:1.1rem;font-weight:700;">$5,200</p>
-          <div style="display:flex;gap:10px;margin-top:auto;">
-            <a href="pages/product-detail.html"><button class="sm-button" style="flex:1;">View Details</button></a>
+          <p class="card-price">$5,200</p>
+          <div class="card-actions">
+            <a href="pages/product-detail.html"><button class="sm-button flex-1">View Details</button></a>
             <button class="sm-button border-button" onclick="addToCart('prod-3','Lady Diamond',5200,'sources/image6.png')">Add to Cart</button>
           </div>
         </div>
@@ -109,13 +109,13 @@
       <!-- Card 4 -->
       <div class="card">
         <img src="sources/image3.png" alt="Aviator GMT" />
-        <div style="padding:20px;display:flex;flex-direction:column;gap:8px;flex:1;">
+        <div class="card-body">
           <h4>Aviator GMT</h4>
           <h3>Pilot Collection</h3>
           <p>Dual timezone GMT hand with anti-reflective crystal.</p>
-          <p style="color:var(--brand-third-color);font-size:1.1rem;font-weight:700;">$4,100</p>
-          <div style="display:flex;gap:10px;margin-top:auto;">
-            <a href="pages/product-detail.html"><button class="sm-button" style="flex:1;">View Details</button></a>
+          <p class="card-price">$4,100</p>
+          <div class="card-actions">
+            <a href="pages/product-detail.html"><button class="sm-button flex-1">View Details</button></a>
             <button class="sm-button border-button" onclick="addToCart('prod-4','Aviator GMT',4100,'sources/image3.png')">Add to Cart</button>
           </div>
         </div>
@@ -126,15 +126,15 @@
   </section>
 
   <!-- ===== BRAND STORY ===== -->
-  <section style="display:flex;align-items:center;gap:60px;padding:80px 10%;flex-wrap:wrap;background:var(--brand-primary-color);">
-    <img src="sources/image2.png" alt="Master watchmaker" style="width:100%;max-width:480px;border-radius:var(--radius-md);object-fit:cover;flex:1;min-width:280px;" />
-    <div style="flex:1;min-width:260px;">
+  <section class="brand-story">
+    <img src="sources/image2.png" alt="Master watchmaker" class="brand-story-img" />
+    <div class="brand-story-content">
       <h4>Our Heritage</h4>
       <h2>Over a Century of Swiss Mastery</h2>
-      <div class="section-line" style="margin:0 0 24px;"></div>
+      <div class="section-line section-line--left"></div>
       <p>Born in the Swiss Jura mountains, ChronoLux has been creating extraordinary timepieces since 1889. Every watch is assembled by hand by master craftsmen who dedicate their lives to the art of horology.</p>
       <p>Each movement undergoes over 200 quality tests before it earns the ChronoLux signature.</p>
-      <a href="pages/about.html"><button class="border-button" style="margin-top:12px;">Discover Our Story</button></a>
+      <a href="pages/about.html"><button class="border-button btn-mt">Discover Our Story</button></a>
     </div>
   </section>
 
@@ -145,18 +145,18 @@
     <div class="section-line"></div>
 
     <div class="card-container">
-      <div class="card" style="align-items:center;text-align:center;padding:32px 24px;">
-        <div style="font-size:2.5rem;margin-bottom:16px;">⚙️</div>
+      <div class="card service-card">
+        <div class="service-icon">⚙️</div>
         <h3>Swiss Movement</h3>
         <p>Every calibre is certified by independent Swiss testing institutes.</p>
       </div>
-      <div class="card" style="align-items:center;text-align:center;padding:32px 24px;">
-        <div style="font-size:2.5rem;margin-bottom:16px;">🛡️</div>
+      <div class="card service-card">
+        <div class="service-icon">🛡️</div>
         <h3>5-Year Warranty</h3>
         <p>Comprehensive coverage on all mechanical and cosmetic components.</p>
       </div>
-      <div class="card" style="align-items:center;text-align:center;padding:32px 24px;">
-        <div style="font-size:2.5rem;margin-bottom:16px;">📦</div>
+      <div class="card service-card">
+        <div class="service-icon">📦</div>
         <h3>Free Delivery</h3>
         <p>Complimentary express delivery worldwide in our signature gift box.</p>
       </div>
@@ -164,12 +164,12 @@
   </section>
 
   <!-- ===== NEWSLETTER ===== -->
-  <section style="background:var(--brand-secondary-color);padding:80px 24px;text-align:center;">
+  <section class="newsletter-section">
     <h4>Stay In Time</h4>
     <h2>Join the ChronoLux Circle</h2>
-    <p style="max-width:480px;margin:0 auto 32px;">Be first to discover new collections, exclusive events, and watchmaking insights.</p>
-    <form onsubmit="event.preventDefault();showToast('Welcome to ChronoLux Circle!');" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;max-width:480px;margin:0 auto;background:none;border:none;padding:0;">
-      <input type="email" placeholder="Your email address" required style="flex:1;min-width:220px;" />
+    <p class="newsletter-text">Be first to discover new collections, exclusive events, and watchmaking insights.</p>
+    <form onsubmit="event.preventDefault();showToast('Welcome to ChronoLux Circle!');" class="newsletter-form">
+      <input type="email" placeholder="Your email address" required class="newsletter-input" />
       <button type="submit">Subscribe</button>
     </form>
   </section>

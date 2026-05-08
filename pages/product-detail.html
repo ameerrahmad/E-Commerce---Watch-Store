@@ -20,8 +20,8 @@
       <li><a href="about.html">About</a></li>
       <li><a href="contact.html">Contact</a></li>
       <li>
-        <a href="cart.html" style="position:relative;">
-          🛒 <span id="cart-badge" style="display:none;position:absolute;top:-8px;right:-12px;background:var(--brand-third-color);color:var(--brand-primary-color);border-radius:50%;width:18px;height:18px;font-size:0.65rem;font-weight:700;align-items:center;justify-content:center;">0</span>
+        <a href="cart.html" class="cart-link">
+          🛒 <span id="cart-badge" class="cart-badge">0</span>
         </a>
       </li>
       <li><button id="dark-mode-btn" class="tiny-button border-button">🌙</button></li>
@@ -30,40 +30,40 @@
   </nav>
 
   <!-- Breadcrumb -->
-  <div style="padding:16px 48px;background:var(--bg-card);border-bottom:1px solid var(--border-muted-color);font-size:0.82rem;color:var(--text-muted-color);">
+  <div class="breadcrumb">
     <a href="../index.html">Home</a> &nbsp;/&nbsp;
     <a href="products.html">Collection</a> &nbsp;/&nbsp;
-    <span style="color:var(--brand-third-color);">Chronograph Pro</span>
+    <span class="accent-text">Chronograph Pro</span>
   </div>
 
   <!-- Product Detail -->
   <div class="page">
-    <div style="display:flex;gap:60px;flex-wrap:wrap;align-items:flex-start;">
+    <div class="product-layout">
 
       <!-- Image -->
-      <div style="flex:1;min-width:280px;max-width:520px;">
-        <img src="../sources/image3.png" alt="Chronograph Pro" style="width:100%;border-radius:var(--radius-md);border:1px solid var(--border-primary-color);" />
-        <div style="display:flex;gap:12px;margin-top:12px;">
-          <img src="../sources/image3.png" alt="View 1" style="width:80px;height:80px;object-fit:cover;border-radius:var(--radius-sm);border:1px solid var(--border-secondary-color);cursor:pointer;" />
-          <img src="../sources/image5.png" alt="View 2" style="width:80px;height:80px;object-fit:cover;border-radius:var(--radius-sm);border:1px solid var(--border-primary-color);cursor:pointer;opacity:0.6;" />
-          <img src="../sources/image6.png" alt="View 3" style="width:80px;height:80px;object-fit:cover;border-radius:var(--radius-sm);border:1px solid var(--border-primary-color);cursor:pointer;opacity:0.6;" />
+      <div class="product-gallery">
+        <img src="../sources/image3.png" alt="Chronograph Pro" class="product-main-img" />
+        <div class="product-thumbs">
+          <img src="../sources/image3.png" alt="View 1" class="product-thumb" />
+          <img src="../sources/image5.png" alt="View 2" class="product-thumb--inactive" />
+          <img src="../sources/image6.png" alt="View 3" class="product-thumb--inactive" />
         </div>
       </div>
 
       <!-- Info -->
-      <div style="flex:1;min-width:280px;display:flex;flex-direction:column;gap:16px;">
+      <div class="product-info">
         <div>
           <h4>Chronograph Collection</h4>
-          <h1 style="font-size:2rem;">Chronograph Pro</h1>
-          <p>Ref. CL-CH-001 &nbsp;|&nbsp; <span style="color:var(--brand-third-color);">In Stock</span></p>
+          <h1 class="product-title">Chronograph Pro</h1>
+          <p>Ref. CL-CH-001 &nbsp;|&nbsp; <span class="accent-text">In Stock</span></p>
         </div>
-        <p style="font-size:1.8rem;font-weight:700;color:var(--brand-third-color);margin:0;">$2,850</p>
+        <p class="product-price-lg">$2,850</p>
         <p>A masterpiece of precision engineering. The Chronograph Pro features a triple sub-dial layout, Swiss ETA 7750 movement, and a scratch-resistant sapphire crystal. Crafted for those who demand performance without compromise.</p>
 
         <!-- Options -->
         <div>
           <label for="strap-select">Strap Option</label>
-          <div class="select-container" style="margin-top:6px;">
+          <div class="select-container select-mt">
             <select id="strap-select">
               <option>Brown Leather</option>
               <option>Black Leather</option>
@@ -74,32 +74,32 @@
         </div>
 
         <!-- Quantity -->
-        <div style="display:flex;align-items:center;gap:16px;">
+        <div class="qty-wrapper">
           <label>Quantity</label>
-          <div style="display:flex;align-items:center;gap:0;border:1px solid var(--border-primary-color);border-radius:var(--radius-sm);overflow:hidden;">
-            <button class="tiny-button" style="border-radius:0;border:none;padding:8px 14px;" onclick="this.nextElementSibling.value=Math.max(1,parseInt(this.nextElementSibling.value)-1)">−</button>
-            <input type="number" value="1" min="1" id="qty-input" style="width:48px;text-align:center;border:none;background:var(--bg-card);padding:8px 0;" />
-            <button class="tiny-button" style="border-radius:0;border:none;padding:8px 14px;" onclick="this.previousElementSibling.value=parseInt(this.previousElementSibling.value)+1">+</button>
+          <div class="qty-controls">
+            <button class="tiny-button qty-btn" onclick="this.nextElementSibling.value=Math.max(1,parseInt(this.nextElementSibling.value)-1)">−</button>
+            <input type="number" value="1" min="1" id="qty-input" class="qty-input" />
+            <button class="tiny-button qty-btn" onclick="this.previousElementSibling.value=parseInt(this.previousElementSibling.value)+1">+</button>
           </div>
         </div>
 
-        <div style="display:flex;gap:12px;flex-wrap:wrap;">
-          <button class="lg-button" style="flex:1;" onclick="addToCart('prod-1','Chronograph Pro',2850,'../sources/image3.png');showToast('Added to cart!')">Add to Cart</button>
+        <div class="product-actions">
+          <button class="lg-button flex-1" onclick="addToCart('prod-1','Chronograph Pro',2850,'../sources/image3.png');showToast('Added to cart!')">Add to Cart</button>
           <button class="lg-button border-button" onclick="showToast('Saved to wishlist ♡')">♡ Wishlist</button>
         </div>
 
-        <div style="display:flex;gap:20px;padding:16px 0;border-top:1px solid var(--border-muted-color);border-bottom:1px solid var(--border-muted-color);flex-wrap:wrap;">
-          <span style="font-size:0.82rem;color:var(--text-muted-color);">🚚 Free shipping worldwide</span>
-          <span style="font-size:0.82rem;color:var(--text-muted-color);">🛡️ 5-year warranty</span>
-          <span style="font-size:0.82rem;color:var(--text-muted-color);">↩ 30-day returns</span>
+        <div class="product-badges">
+          <span class="product-badge">🚚 Free shipping worldwide</span>
+          <span class="product-badge">🛡️ 5-year warranty</span>
+          <span class="product-badge">↩ 30-day returns</span>
         </div>
       </div>
     </div>
 
     <!-- Specs Table -->
-    <div style="margin-top:60px;">
+    <div class="specs-section">
       <h2>Technical Specifications</h2>
-      <div class="section-line" style="margin:0 0 24px;"></div>
+      <div class="section-line section-line--left"></div>
       <div class="table-container">
         <table style="min-width:320px;max-width:720px;" class="table-bordered">
           <thead>
@@ -122,32 +122,32 @@
     </div>
 
     <!-- Related Products -->
-    <div style="margin-top:60px;">
-      <h2 style="text-align:center;">You May Also Like</h2>
+    <div class="related-section">
+      <h2 class="text-center">You May Also Like</h2>
       <div class="section-line"></div>
       <div class="card-container">
         <div class="card">
           <img src="../sources/image5.png" alt="Diver X1" />
-          <div style="padding:16px;display:flex;flex-direction:column;gap:6px;">
+          <div class="card-body-related">
             <h4>Diver</h4><h3>Diver X1</h3>
-            <p style="color:var(--brand-third-color);font-weight:700;">$3,400</p>
-            <a href="product-detail.html"><button class="sm-button" style="width:100%;">View Details</button></a>
+            <p class="card-price-sm">$3,400</p>
+            <a href="product-detail.html"><button class="sm-button btn-full">View Details</button></a>
           </div>
         </div>
         <div class="card">
           <img src="../sources/image3.png" alt="Aviator GMT" />
-          <div style="padding:16px;display:flex;flex-direction:column;gap:6px;">
+          <div class="card-body-related">
             <h4>Pilot</h4><h3>Aviator GMT</h3>
-            <p style="color:var(--brand-third-color);font-weight:700;">$4,100</p>
-            <a href="product-detail.html"><button class="sm-button" style="width:100%;">View Details</button></a>
+            <p class="card-price-sm">$4,100</p>
+            <a href="product-detail.html"><button class="sm-button btn-full">View Details</button></a>
           </div>
         </div>
         <div class="card">
           <img src="../sources/image6.png" alt="Lady Diamond" />
-          <div style="padding:16px;display:flex;flex-direction:column;gap:6px;">
+          <div class="card-body-related">
             <h4>Ladies</h4><h3>Lady Diamond</h3>
-            <p style="color:var(--brand-third-color);font-weight:700;">$5,200</p>
-            <a href="product-detail.html"><button class="sm-button" style="width:100%;">View Details</button></a>
+            <p class="card-price-sm">$5,200</p>
+            <a href="product-detail.html"><button class="sm-button btn-full">View Details</button></a>
           </div>
         </div>
       </div>

@@ -19,8 +19,8 @@
       <li><a href="products.html">Collection</a></li>
       <li><a href="contact.html">Contact</a></li>
       <li>
-        <a href="cart.html" style="position:relative;">
-          🛒 <span id="cart-badge" style="display:none;position:absolute;top:-8px;right:-12px;background:var(--brand-third-color);color:var(--brand-primary-color);border-radius:50%;width:18px;height:18px;font-size:0.65rem;font-weight:700;align-items:center;justify-content:center;">0</span>
+        <a href="cart.html" class="cart-link">
+          🛒 <span id="cart-badge" class="cart-badge">0</span>
         </a>
       </li>
       <li><button id="dark-mode-btn" class="tiny-button border-button">🌙</button></li>
@@ -29,13 +29,13 @@
   </nav>
 
   <div class="page">
-    <h1>Your <span style="color:var(--brand-third-color);">Cart</span></h1>
-    <div class="section-line" style="margin:0 0 32px;"></div>
+    <h1>Your <span class="accent-text">Cart</span></h1>
+    <div class="section-line section-line--left"></div>
 
-    <div style="display:flex;gap:32px;flex-wrap:wrap;align-items:flex-start;">
+    <div class="cart-layout">
 
       <!-- Cart Items -->
-      <div style="flex:2;min-width:280px;">
+      <div class="cart-items">
         <div class="table-container">
           <table id="cart-table" style="min-width:480px;max-width:900px;">
             <thead>
@@ -53,35 +53,35 @@
           </table>
         </div>
 
-        <div style="display:flex;justify-content:space-between;margin-top:20px;flex-wrap:wrap;gap:12px;">
+        <div class="cart-actions-row">
           <a href="products.html"><button class="border-button">← Continue Shopping</button></a>
           <button class="border-button" onclick="clearCart();renderCart();showToast('Cart cleared')">Clear Cart</button>
         </div>
       </div>
 
       <!-- Order Summary -->
-      <div class="card" style="flex:1;min-width:260px;padding:28px;gap:16px;">
-        <h2 style="margin:0 0 8px;">Order Summary</h2>
-        <div style="display:flex;flex-direction:column;gap:12px;border-bottom:1px solid var(--border-muted-color);padding-bottom:16px;">
-          <div style="display:flex;justify-content:space-between;"><span style="color:var(--text-muted-color);">Subtotal</span><span id="summary-subtotal">$0</span></div>
-          <div style="display:flex;justify-content:space-between;"><span style="color:var(--text-muted-color);">Shipping</span><span style="color:var(--brand-third-color);">Free</span></div>
-          <div style="display:flex;justify-content:space-between;"><span style="color:var(--text-muted-color);">Tax (8%)</span><span id="summary-tax">$0</span></div>
+      <div class="card order-summary">
+        <h2 class="summary-title">Order Summary</h2>
+        <div class="summary-details">
+          <div class="summary-row"><span class="summary-label">Subtotal</span><span id="summary-subtotal">$0</span></div>
+          <div class="summary-row"><span class="summary-label">Shipping</span><span class="accent-text">Free</span></div>
+          <div class="summary-row"><span class="summary-label">Tax (8%)</span><span id="summary-tax">$0</span></div>
         </div>
-        <div style="display:flex;justify-content:space-between;font-size:1.1rem;font-weight:700;">
-          <span>Total</span><span id="summary-total" style="color:var(--brand-third-color);">$0</span>
+        <div class="summary-total-row">
+          <span>Total</span><span id="summary-total" class="accent-text">$0</span>
         </div>
 
         <!-- Promo Code -->
         <div>
           <label for="promo-code">Promo Code</label>
-          <div style="display:flex;gap:8px;margin-top:6px;">
-            <input type="text" id="promo-code" placeholder="CHRONO10" style="flex:1;" />
+          <div class="promo-row">
+            <input type="text" id="promo-code" placeholder="CHRONO10" class="promo-input" />
             <button class="sm-button border-button" onclick="showToast('Promo code applied!')">Apply</button>
           </div>
         </div>
 
-        <button style="width:100%;margin-top:8px;" onclick="showToast('Redirecting to secure checkout…')">Proceed to Checkout →</button>
-        <p style="font-size:0.78rem;text-align:center;color:var(--text-muted-color);margin:0;">🔒 Secure SSL checkout. Free insured shipping.</p>
+        <button class="checkout-btn" onclick="showToast('Redirecting to secure checkout…')">Proceed to Checkout →</button>
+        <p class="checkout-note">🔒 Secure SSL checkout. Free insured shipping.</p>
       </div>
     </div>
   </div>
@@ -115,19 +115,19 @@
         const line = item.price * (item.qty || 1);
         subtotal += line;
         return `<tr>
-          <td style="display:flex;align-items:center;gap:12px;">
-            <img src="${item.image}" alt="${item.name}" style="width:54px;height:54px;object-fit:cover;border-radius:var(--radius-sm);border:1px solid var(--border-primary-color);" />
+          <td class="cart-item-cell">
+            <img src="${item.image}" alt="${item.name}" class="cart-item-img" />
             <span>${item.name}</span>
           </td>
           <td>$${item.price.toLocaleString()}</td>
           <td>
-            <div style="display:flex;align-items:center;gap:4px;">
+            <div class="cart-qty-controls">
               <button class="tiny-button border-button" onclick="changeQty('${item.id}',-1);renderCart()">−</button>
-              <span style="min-width:24px;text-align:center;">${item.qty || 1}</span>
+              <span class="cart-qty-value">${item.qty || 1}</span>
               <button class="tiny-button border-button" onclick="changeQty('${item.id}',1);renderCart()">+</button>
             </div>
           </td>
-          <td style="color:var(--brand-third-color);font-weight:600;">$${line.toLocaleString()}</td>
+          <td class="price-cell">$${line.toLocaleString()}</td>
           <td><button class="tiny-button border-button" onclick="removeFromCart('${item.id}');renderCart();showToast('Item removed')">✕</button></td>
         </tr>`;
       }).join('');

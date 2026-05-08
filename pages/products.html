@@ -20,8 +20,8 @@
       <li><a href="about.html">About</a></li>
       <li><a href="contact.html">Contact</a></li>
       <li>
-        <a href="cart.html" style="position:relative;">
-          🛒 <span id="cart-badge" style="display:none;position:absolute;top:-8px;right:-12px;background:var(--brand-third-color);color:var(--brand-primary-color);border-radius:50%;width:18px;height:18px;font-size:0.65rem;font-weight:700;align-items:center;justify-content:center;">0</span>
+        <a href="cart.html" class="cart-link">
+          🛒 <span id="cart-badge" class="cart-badge">0</span>
         </a>
       </li>
       <li><button id="dark-mode-btn" class="tiny-button border-button">🌙</button></li>
@@ -30,16 +30,16 @@
   </nav>
 
   <!-- Page Header -->
-  <div style="background:var(--brand-primary-color);padding:60px 48px 40px;text-align:center;border-bottom:1px solid var(--border-muted-color);">
+  <div class="page-header">
     <h4>Swiss Craftsmanship</h4>
-    <h1>The <span style="color:var(--brand-third-color);">Collection</span></h1>
-    <p style="max-width:500px;margin:0 auto;">Every timepiece is a testament to over a century of horological mastery.</p>
+    <h1>The <span class="accent-text">Collection</span></h1>
+    <p class="page-header-text">Every timepiece is a testament to over a century of horological mastery.</p>
   </div>
 
   <!-- Filters -->
-  <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;padding:24px 48px;background:var(--bg-card);border-bottom:1px solid var(--border-muted-color);">
-    <div class="select-container" style="min-width:180px;">
-      <label for="filter-category" style="margin-bottom:4px;">Category</label>
+  <div class="filter-bar">
+    <div class="select-container filter-select">
+      <label for="filter-category" class="filter-label">Category</label>
       <select id="filter-category">
         <option>All Categories</option>
         <option>Chronograph</option>
@@ -50,8 +50,8 @@
         <option>Skeleton</option>
       </select>
     </div>
-    <div class="select-container" style="min-width:180px;">
-      <label for="filter-price" style="margin-bottom:4px;">Price Range</label>
+    <div class="select-container filter-select">
+      <label for="filter-price" class="filter-label">Price Range</label>
       <select id="filter-price">
         <option>All Prices</option>
         <option>Under $2,000</option>
@@ -60,8 +60,8 @@
         <option>Above $7,000</option>
       </select>
     </div>
-    <div class="select-container" style="min-width:180px;">
-      <label for="filter-sort" style="margin-bottom:4px;">Sort By</label>
+    <div class="select-container filter-select">
+      <label for="filter-sort" class="filter-label">Sort By</label>
       <select id="filter-sort">
         <option>Featured</option>
         <option>Price: Low to High</option>
@@ -69,22 +69,22 @@
         <option>Newest First</option>
       </select>
     </div>
-    <button class="sm-button border-button" style="margin-top:22px;" onclick="showToast('Filters applied')">Apply Filters</button>
+    <button class="sm-button border-button filter-btn" onclick="showToast('Filters applied')">Apply Filters</button>
   </div>
 
   <!-- Products Grid -->
-  <div class="page" style="padding-top:36px;">
+  <div class="page page--pt-sm">
     <div class="card-container">
 
       <div class="card">
         <img src="../sources/image3.png" alt="Chronograph Pro" />
-        <div style="padding:18px;display:flex;flex-direction:column;gap:6px;flex:1;">
+        <div class="card-body-sm">
           <h4>Chronograph</h4>
           <h3>Chronograph Pro</h3>
-          <p style="font-size:0.88rem;">Triple sub-dial precision with sapphire crystal glass.</p>
-          <p style="color:var(--brand-third-color);font-weight:700;">$2,850</p>
-          <div style="display:flex;gap:8px;margin-top:auto;">
-            <a href="product-detail.html" style="flex:1;"><button class="sm-button" style="width:100%;">View</button></a>
+          <p class="card-desc">Triple sub-dial precision with sapphire crystal glass.</p>
+          <p class="card-price-sm">$2,850</p>
+          <div class="card-actions-sm">
+            <a href="product-detail.html" class="flex-1"><button class="sm-button btn-full">View</button></a>
             <button class="sm-button border-button" onclick="addToCart('prod-1','Chronograph Pro',2850,'../sources/image3.png')">+ Cart</button>
           </div>
         </div>
@@ -92,13 +92,13 @@
 
       <div class="card">
         <img src="../sources/image5.png" alt="Diver X1" />
-        <div style="padding:18px;display:flex;flex-direction:column;gap:6px;flex:1;">
+        <div class="card-body-sm">
           <h4>Diver</h4>
           <h3>Diver X1</h3>
-          <p style="font-size:0.88rem;">300m water resistant with luminous dial.</p>
-          <p style="color:var(--brand-third-color);font-weight:700;">$3,400</p>
-          <div style="display:flex;gap:8px;margin-top:auto;">
-            <a href="product-detail.html" style="flex:1;"><button class="sm-button" style="width:100%;">View</button></a>
+          <p class="card-desc">300m water resistant with luminous dial.</p>
+          <p class="card-price-sm">$3,400</p>
+          <div class="card-actions-sm">
+            <a href="product-detail.html" class="flex-1"><button class="sm-button btn-full">View</button></a>
             <button class="sm-button border-button" onclick="addToCart('prod-2','Diver X1',3400,'../sources/image5.png')">+ Cart</button>
           </div>
         </div>
@@ -106,13 +106,13 @@
 
       <div class="card">
         <img src="../sources/image6.png" alt="Lady Diamond" />
-        <div style="padding:18px;display:flex;flex-direction:column;gap:6px;flex:1;">
+        <div class="card-body-sm">
           <h4>Ladies</h4>
           <h3>Lady Diamond</h3>
-          <p style="font-size:0.88rem;">Diamond-set bezel with mother-of-pearl dial.</p>
-          <p style="color:var(--brand-third-color);font-weight:700;">$5,200</p>
-          <div style="display:flex;gap:8px;margin-top:auto;">
-            <a href="product-detail.html" style="flex:1;"><button class="sm-button" style="width:100%;">View</button></a>
+          <p class="card-desc">Diamond-set bezel with mother-of-pearl dial.</p>
+          <p class="card-price-sm">$5,200</p>
+          <div class="card-actions-sm">
+            <a href="product-detail.html" class="flex-1"><button class="sm-button btn-full">View</button></a>
             <button class="sm-button border-button" onclick="addToCart('prod-3','Lady Diamond',5200,'../sources/image6.png')">+ Cart</button>
           </div>
         </div>
@@ -120,13 +120,13 @@
 
       <div class="card">
         <img src="../sources/image3.png" alt="Aviator GMT" />
-        <div style="padding:18px;display:flex;flex-direction:column;gap:6px;flex:1;">
+        <div class="card-body-sm">
           <h4>Pilot</h4>
           <h3>Aviator GMT</h3>
-          <p style="font-size:0.88rem;">Dual timezone with anti-reflective sapphire.</p>
-          <p style="color:var(--brand-third-color);font-weight:700;">$4,100</p>
-          <div style="display:flex;gap:8px;margin-top:auto;">
-            <a href="product-detail.html" style="flex:1;"><button class="sm-button" style="width:100%;">View</button></a>
+          <p class="card-desc">Dual timezone with anti-reflective sapphire.</p>
+          <p class="card-price-sm">$4,100</p>
+          <div class="card-actions-sm">
+            <a href="product-detail.html" class="flex-1"><button class="sm-button btn-full">View</button></a>
             <button class="sm-button border-button" onclick="addToCart('prod-4','Aviator GMT',4100,'../sources/image3.png')">+ Cart</button>
           </div>
         </div>
@@ -134,13 +134,13 @@
 
       <div class="card">
         <img src="../sources/image5.png" alt="Stealth Black" />
-        <div style="padding:18px;display:flex;flex-direction:column;gap:6px;flex:1;">
+        <div class="card-body-sm">
           <h4>Sport</h4>
           <h3>Stealth Black</h3>
-          <p style="font-size:0.88rem;">Full PVD black case with tactical green dial.</p>
-          <p style="color:var(--brand-third-color);font-weight:700;">$2,300</p>
-          <div style="display:flex;gap:8px;margin-top:auto;">
-            <a href="product-detail.html" style="flex:1;"><button class="sm-button" style="width:100%;">View</button></a>
+          <p class="card-desc">Full PVD black case with tactical green dial.</p>
+          <p class="card-price-sm">$2,300</p>
+          <div class="card-actions-sm">
+            <a href="product-detail.html" class="flex-1"><button class="sm-button btn-full">View</button></a>
             <button class="sm-button border-button" onclick="addToCart('prod-5','Stealth Black',2300,'../sources/image5.png')">+ Cart</button>
           </div>
         </div>
@@ -148,13 +148,13 @@
 
       <div class="card">
         <img src="../sources/image6.png" alt="Rose Eternal" />
-        <div style="padding:18px;display:flex;flex-direction:column;gap:6px;flex:1;">
+        <div class="card-body-sm">
           <h4>Dress</h4>
           <h3>Rose Eternal</h3>
-          <p style="font-size:0.88rem;">18K rose gold with champagne dial &amp; Roman numerals.</p>
-          <p style="color:var(--brand-third-color);font-weight:700;">$7,800</p>
-          <div style="display:flex;gap:8px;margin-top:auto;">
-            <a href="product-detail.html" style="flex:1;"><button class="sm-button" style="width:100%;">View</button></a>
+          <p class="card-desc">18K rose gold with champagne dial &amp; Roman numerals.</p>
+          <p class="card-price-sm">$7,800</p>
+          <div class="card-actions-sm">
+            <a href="product-detail.html" class="flex-1"><button class="sm-button btn-full">View</button></a>
             <button class="sm-button border-button" onclick="addToCart('prod-6','Rose Eternal',7800,'../sources/image6.png')">+ Cart</button>
           </div>
         </div>
@@ -162,13 +162,13 @@
 
       <div class="card">
         <img src="../sources/image3.png" alt="Skeleton One" />
-        <div style="padding:18px;display:flex;flex-direction:column;gap:6px;flex:1;">
+        <div class="card-body-sm">
           <h4>Skeleton</h4>
           <h3>Skeleton One</h3>
-          <p style="font-size:0.88rem;">Open-heart movement, hand-finished gold bridges.</p>
-          <p style="color:var(--brand-third-color);font-weight:700;">$6,400</p>
-          <div style="display:flex;gap:8px;margin-top:auto;">
-            <a href="product-detail.html" style="flex:1;"><button class="sm-button" style="width:100%;">View</button></a>
+          <p class="card-desc">Open-heart movement, hand-finished gold bridges.</p>
+          <p class="card-price-sm">$6,400</p>
+          <div class="card-actions-sm">
+            <a href="product-detail.html" class="flex-1"><button class="sm-button btn-full">View</button></a>
             <button class="sm-button border-button" onclick="addToCart('prod-7','Skeleton One',6400,'../sources/image3.png')">+ Cart</button>
           </div>
         </div>
@@ -176,13 +176,13 @@
 
       <div class="card">
         <img src="../sources/image5.png" alt="Ocean Master" />
-        <div style="padding:18px;display:flex;flex-direction:column;gap:6px;flex:1;">
+        <div class="card-body-sm">
           <h4>Diver</h4>
           <h3>Ocean Master</h3>
-          <p style="font-size:0.88rem;">500m professional dive watch with helium escape valve.</p>
-          <p style="color:var(--brand-third-color);font-weight:700;">$4,950</p>
-          <div style="display:flex;gap:8px;margin-top:auto;">
-            <a href="product-detail.html" style="flex:1;"><button class="sm-button" style="width:100%;">View</button></a>
+          <p class="card-desc">500m professional dive watch with helium escape valve.</p>
+          <p class="card-price-sm">$4,950</p>
+          <div class="card-actions-sm">
+            <a href="product-detail.html" class="flex-1"><button class="sm-button btn-full">View</button></a>
             <button class="sm-button border-button" onclick="addToCart('prod-8','Ocean Master',4950,'../sources/image5.png')">+ Cart</button>
           </div>
         </div>

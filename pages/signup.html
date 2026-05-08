@@ -22,29 +22,29 @@
     </ul>
   </nav>
 
-  <div class="form-container" style="padding:48px 20px;">
-    <div style="text-align:center;margin-bottom:32px;">
-      <a href="../index.html" style="font-size:1.8rem;font-weight:700;letter-spacing:0.12em;color:var(--brand-third-color);text-transform:uppercase;">ChronoLux</a>
-      <p style="margin-top:8px;color:var(--text-muted-color);font-size:0.9rem;">Create your account</p>
+  <div class="form-container form-container--padded">
+    <div class="form-header">
+      <a href="../index.html" class="form-logo">ChronoLux</a>
+      <p class="form-tagline">Create your account</p>
     </div>
 
     <form id="signup-form" onsubmit="event.preventDefault(); if(validateForm('signup-form')) showToast('Account created! Welcome to ChronoLux.');">
-      <div style="display:flex;gap:12px;flex-wrap:wrap;">
-        <div style="flex:1;min-width:140px;">
+      <div class="signup-row">
+        <div class="signup-col">
           <label for="first-name">First Name</label>
           <input type="text" id="first-name" name="first-name" placeholder="Jean" required />
-          <span class="field-error" style="display:none;color:#E05555;font-size:0.78rem;">Required.</span>
+          <span class="field-error">Required.</span>
         </div>
-        <div style="flex:1;min-width:140px;">
+        <div class="signup-col">
           <label for="last-name">Last Name</label>
           <input type="text" id="last-name" name="last-name" placeholder="Dupont" required />
-          <span class="field-error" style="display:none;color:#E05555;font-size:0.78rem;">Required.</span>
+          <span class="field-error">Required.</span>
         </div>
       </div>
       <div>
         <label for="signup-email">Email Address</label>
         <input type="email" id="signup-email" name="email" placeholder="you@example.com" required />
-        <span class="field-error" style="display:none;color:#E05555;font-size:0.78rem;">Valid email required.</span>
+        <span class="field-error">Valid email required.</span>
       </div>
       <div>
         <label for="phone">Phone Number</label>
@@ -53,12 +53,12 @@
       <div>
         <label for="password">Password</label>
         <input type="password" id="password" name="password" placeholder="Min. 8 characters" required />
-        <span class="field-error" style="display:none;color:#E05555;font-size:0.78rem;">Password required.</span>
+        <span class="field-error">Password required.</span>
       </div>
       <div>
         <label for="confirm-password">Confirm Password</label>
         <input type="password" id="confirm-password" name="confirm-password" placeholder="Repeat password" required />
-        <span class="field-error" style="display:none;color:#E05555;font-size:0.78rem;">Passwords must match.</span>
+        <span class="field-error">Passwords must match.</span>
       </div>
       <div>
         <label for="country">Country</label>
@@ -76,14 +76,14 @@
           </select>
         </div>
       </div>
-      <div style="margin-bottom:24px;">
-        <label style="display:flex;align-items:flex-start;gap:8px;text-transform:none;font-size:0.85rem;letter-spacing:0;cursor:pointer;font-weight:400;">
-          <input type="checkbox" id="terms" style="width:auto;margin-top:3px;" required />
-          I agree to the <a href="#" style="margin-left:4px;">Terms of Service</a>&nbsp;&amp;&nbsp;<a href="#">Privacy Policy</a>
+      <div class="terms-wrap">
+        <label class="terms-label">
+          <input type="checkbox" id="terms" class="terms-checkbox" required />
+          I agree to the <a href="#" class="terms-link">Terms of Service</a>&nbsp;&amp;&nbsp;<a href="#">Privacy Policy</a>
         </label>
       </div>
-      <button type="submit" style="width:100%;">Create Account</button>
-      <p style="text-align:center;margin-top:20px;font-size:0.88rem;">
+      <button type="submit" class="btn-full">Create Account</button>
+      <p class="form-footer">
         Already have an account? <a href="login.html">Sign in →</a>
       </p>
     </form>
