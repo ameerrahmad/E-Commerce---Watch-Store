@@ -1411,6 +1411,60 @@ footer h2 { font-size: 0.78rem; color: var(--brand-third-color); letter-spacing:
 .link-mt { margin-top: 32px; }
 
 /* =========================================================
+   ACTIVE NAV LINK
+========================================================= */
+nav a.nav-active {
+  color: var(--brand-third-color) !important;
+  border-bottom-color: var(--brand-third-color) !important;
+}
+
+/* =========================================================
+   DASHBOARD PAGE ANIMATION
+========================================================= */
+.dashboard-page {
+  animation: fadeSlideIn 0.5s ease-out;
+}
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================================
+   TOAST NOTIFICATION
+========================================================= */
+.toast {
+  position: fixed;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--brand-third-color);
+  color: var(--brand-primary-color);
+  padding: 14px 32px;
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  box-shadow: 0 8px 32px rgba(201,168,76,0.35);
+  z-index: 9999;
+  animation: toastIn 0.3s ease-out, toastOut 0.3s ease-in 2.7s;
+  pointer-events: none;
+}
+@keyframes toastIn {
+  from { opacity: 0; transform: translateX(-50%) translateY(20px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+@keyframes toastOut {
+  from { opacity: 1; transform: translateX(-50%) translateY(0); }
+  to   { opacity: 0; transform: translateX(-50%) translateY(20px); }
+}
+
+/* =========================================================
    RESPONSIVE OVERRIDES FOR NEW CLASSES
 ========================================================= */
 @media (max-width: 768px) {
